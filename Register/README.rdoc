@@ -1,28 +1,13 @@
-== README
+== Registreringsapplikation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Applikation för att registrera applikationer som vill använda Webb-API'et som ska skapas.
 
-Things you may want to cover:
+Krav:
+* Registreringsformulär för en utvecklare där en giltig API-nyckel skapas vid registrering och sparas undan för att använda när man kontrollerar anrop till API:et.
+* Inloggning för en registrerad applikationsutvecklare att kunna se / ta bort sin nykel.
+* Inloggningsformulär för en administratör.
+* En sida där den inloggade administratören kan ta bort(revoke) befintliga API-nycklar.
+* Applikationen ska versionhanteras via ett öppet repo på Github.
+* Applikationen ska fungera väl och det ska i repositoriet finnas en beskrivning hur man installerar och kör igång applikationen (ni kommer göra peer-reviews på varandras applikationer).
+* Eventuella frågor kring registreringsapplikationen kan diskuteras under de schemalagda handledningspassen.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
