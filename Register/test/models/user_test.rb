@@ -6,8 +6,7 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   test "Should not save without email" do
-    t = User.new
-    t.apikey = "545132546"
+    t = User.new(email: "     ")
     assert_not t.save
   end
 
