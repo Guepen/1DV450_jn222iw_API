@@ -10,4 +10,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not t.save
   end
 
+  test "Removing a user should remove the apikey for that user" do
+    assert_difference('ApiKey.count', difference = -1) do
+      u = User.find(1)
+      u.destroy
+    end
+  end
+
 end
