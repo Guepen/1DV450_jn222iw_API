@@ -1,8 +1,8 @@
-<h1>Skapa ny användare</h1>
+<h2>Register new user</h2>
 
 <% if @user.errors.any? %>
     <div id="error_messages">
-      <h2><%= pluralize(@user.errors.count, "fel") %> i formuläret gjorde att användaren inte kunde sparas:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> in the form:</h2>
       <ul>
         <% @user.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
@@ -15,8 +15,14 @@
     <div>
       <%= u.label :email %>
       <%= u.text_field :email %>
+
+      <%= u.label :password %>
+      <%= u.password_field :password %>
+
+      <%= u.label :password_confirmation %>
+      <%= u.password_field :password_confirmation %>
     </div>
     <div>
-      <%= u.submit "Skapa användare" %>
+      <%= u.submit "Register new user" %>
     </div>
 <% end %>

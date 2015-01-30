@@ -1,7 +1,15 @@
-<h1>Användare</h1>
+<div id="login">
+  <h2>Sign in</h2>
+  <fieldset>
+    <%= form_tag("/login", method: "post") do %>
+        <p><%= label_tag(:email, "E-mail:") %></p>
+        <p><%= email_field_tag(:email) %></p>
 
-<ul id="teamlist">
-  <% @users.each do |u| %>
-    <li><%= u.email %></li>
-  <% end %>
-</ul>
+        <p><%= label_tag(:password, "Password:") %></p>
+        <p><%= password_field_tag(:password) %></p>
+
+        <p><%= submit_tag("Log in") %></p>
+    <% end %>
+  </fieldset>
+  <%= link_to "Register", new_user_path %>
+</div>

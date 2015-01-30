@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+
   end
 
   def new
@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to :action => "index"
+      session[:userid] = @user.id
+      redirect_to apikey_path
     else
       render :action => "new"
     end
@@ -19,6 +20,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end
