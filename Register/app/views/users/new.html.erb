@@ -1,0 +1,22 @@
+<h1>Skapa ny användare</h1>
+
+<% if @user.errors.any? %>
+    <div id="error_messages">
+      <h2><%= pluralize(@user.errors.count, "fel") %> i formuläret gjorde att användaren inte kunde sparas:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= form_for @user do |u| %>
+    <div>
+      <%= u.label :email %>
+      <%= u.text_field :email %>
+    </div>
+    <div>
+      <%= u.submit "Skapa användare" %>
+    </div>
+<% end %>
