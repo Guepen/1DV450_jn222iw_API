@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.delete_all
-u1 = User.create(:email => "test@tester.com")
-u2 = User.create(:email => "tester@test.com")
+u1 = User.create(:email => "test@tester.com", :password => "test", :password_confirmation => "test")
+u2 = User.create(:email => "tester@test.com", :password => "test", :password_confirmation => "test")
 
 ApiKey.delete_all
 a1 = ApiKey.create(:apikey => "s5adf5as4d6f4")
