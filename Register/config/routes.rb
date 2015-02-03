@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get   "apikeys" => "apikeys#show", as: :apikey
   post  "login" => "users#login", as: :login
   get   "logout" => "users#logout", as: :logout
+  get   "delete" => "users#delete", as: :delete
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

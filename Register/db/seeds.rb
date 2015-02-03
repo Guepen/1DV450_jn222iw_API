@@ -11,8 +11,8 @@ u1 = User.create(:email => "test@tester.com", :password => "test", :password_con
 u2 = User.create(:email => "tester@test.com", :password => "test", :password_confirmation => "test")
 
 ApiKey.delete_all
-a1 = ApiKey.create()
-a2 = ApiKey.create()
+a1 = ApiKey.create
+a2 = ApiKey.create
 
 u1.api_key = a1
 u2.api_key = a2
