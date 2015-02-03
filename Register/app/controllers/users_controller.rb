@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :check_user, only: [:delete]
   def new
     @user = User.new
   end
@@ -14,6 +14,13 @@ class UsersController < ApplicationController
     else
       render :action => "new"
     end
+  end
+
+  def delete
+    User.find_by_id(@current_user.id).destroy
+    log_out
+    flash[:warning] = 'User and key has been deleted. Register for a new key.'
+    redirect_to root_path
   end
 
   private
