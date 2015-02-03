@@ -26,13 +26,14 @@ class UsersController < ApplicationController
       session[:userid] = u.id
       redirect_to apikey_path
     else
-      #Flash notice
-      redirect_to root_path
+      flash.now[:danger] = 'Invalid email/password combination!'
+      render 'index'
     end
   end
 
   def logout
     session[:userid] = nil
+    flash[:info] = 'Thanks for your visit! Be back soon, ok?'
     redirect_to root_path
   end
 

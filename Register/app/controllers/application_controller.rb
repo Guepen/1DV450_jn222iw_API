@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def require_login
     if current_user.nil? then
-      #Flash message to user
+      flash[:danger] = 'You must login before you can visit this part of the application.'
       redirect_to root_path
     end
   end
