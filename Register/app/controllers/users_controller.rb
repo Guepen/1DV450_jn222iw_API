@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:userid] = @user.id
+      @user.api_key = ApiKey.create
       redirect_to apikey_path
     else
       render :action => "new"

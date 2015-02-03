@@ -1,12 +1,12 @@
 class ApiKey < ActiveRecord::Base
-  before_create :generate_new_apikey
   belongs_to :user
-  validates :apikey, presence: true, uniqueness: true
+  before_create :generate_new_value
+  validates :value, uniqueness: true
 
-  def generate_new_apikey
+  def generate_new_value
     #http://railscasts.com/episodes/352-securing-an-api?view=asciicast
     begin
-      self.apikey = SecureRandom.hex
-    end while self.class.exists?(apikey: apikey)
+      self.value = SecureRandom.hex
+    end while self.class.exists?(value: value)
   end
 end
