@@ -1,5 +1,5 @@
 class ApikeysController < ApplicationController
-  before_action :require_login
+  before_action :check_user
 
   def show
     @key = @current_user.api_key
