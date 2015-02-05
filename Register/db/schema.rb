@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203131511) do
+ActiveRecord::Schema.define(version: 20150205142838) do
+
+  create_table "admins", force: true do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "api_keys", force: true do |t|
     t.string   "value"
