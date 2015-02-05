@@ -29,6 +29,6 @@
 
   <p><%= @key.value %></p>
 
-  <%= link_to 'Delete', delete_path, class: "btn btn-danger btn-lg center" %>
+  <%= link_to 'Delete', user_path(@current_user.id), method: :delete, class: "btn btn-danger btn-lg center" %>
 </div>
 

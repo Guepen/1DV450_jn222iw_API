@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :check_user, only: [:delete]
+  before_action :check_admin, only: [:delete_user]
+
   def new
     @user = User.new
   end
@@ -16,11 +18,17 @@ class UsersController < ApplicationController
     end
   end
 
-  def delete
-    User.find_by_id(@current_user.id).destroy
-    log_out
-    flash[:warning] = 'User and key has been deleted. Register for a new key.'
-    redirect_to root_path
+  def destroy
+    user = User.find_by_id(params[:id])
+    user.destroy
+    if is_admin_logged_in?
+      flash[:success] = 'User and key has been deleted.'
+      redirect_to admin_path
+    else
+      log_out
+      flash[:warning] = 'User and key has been deleted. Register for a new key.'
+      redirect_to root_path
+    end
   end
 
   private
