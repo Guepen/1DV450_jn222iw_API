@@ -1,19 +1,19 @@
-== Registreringsapplikation
+= Registreringsapplikation
 
 Applikation för att registrera applikationer som vill använda Webb-API'et som ska skapas.
 
-##Instruktioner för att köra applikationen
+==Instruktioner för att köra applikationen
 * Ladda ned applikationen och öppna den i din Rails miljö.
-* Kör en ```bundle install``` i terminal-fönstret.
-* Kör ```rails s``` för att starta servern.
+* Kör en <code>bundle install</code> i terminal-fönstret.
+* Kör <code>rails s</code> för att starta servern.
 * Öppna applikationen i en webbläsare.
 
-###Användare
+===Användare
 ####Admin
-**Username:** admin
-**Password:** test
+*Username:* admin
+*Password:* test
 
-####Test
-**E-mail:** test@test.com
-**Password:** test
+===Test
+*E-mail:* test@test.com
+*Password:* test
 
