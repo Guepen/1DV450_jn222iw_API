@@ -2,12 +2,18 @@
 
 Applikation för att registrera applikationer som vill använda Webb-API'et som ska skapas.
 
-Krav:
-* Registreringsformulär för en utvecklare där en giltig API-nyckel skapas vid registrering och sparas undan för att använda när man kontrollerar anrop till API:et.
-* Inloggning för en registrerad applikationsutvecklare att kunna se / ta bort sin nykel.
-* Inloggningsformulär för en administratör.
-* En sida där den inloggade administratören kan ta bort(revoke) befintliga API-nycklar.
-* Applikationen ska versionhanteras via ett öppet repo på Github.
-* Applikationen ska fungera väl och det ska i repositoriet finnas en beskrivning hur man installerar och kör igång applikationen (ni kommer göra peer-reviews på varandras applikationer).
-* Eventuella frågor kring registreringsapplikationen kan diskuteras under de schemalagda handledningspassen.
+##Instruktioner för att köra applikationen
+* Ladda ned applikationen och öppna den i din Rails miljö.
+* Kör en ```bundle install``` i terminal-fönstret.
+* Kör ```rails s``` för att starta servern.
+* Öppna applikationen i en webbläsare.
+
+###Användare
+####Admin
+**Username:** admin
+**Password:** test
+
+####Test
+**E-mail:** test@test.com
+**Password:** test
 
