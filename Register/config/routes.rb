@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
+  get 'admin_login' => 'sessions#new_admin', as: :login_admin
+  post 'admin_login' => 'sessions#create_admin', as: :do_login_admin
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -15,7 +18,9 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
   get   "apikeys" => "apikeys#show", as: :apikey
   get   '/logout'  => 'sessions#destroy', as: :logout
+  get   '/adminlogout' => 'sessions#destroy_admin', as: :logout_admin
   get   'delete' => 'users#delete', as: :delete
+  get   'admin' => 'admins#show', as: :admin
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

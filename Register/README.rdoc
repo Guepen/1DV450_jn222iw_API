@@ -9,12 +9,12 @@ Applikation för att registrera applikationer som vill använda Webb-API'et som 
 * Öppna applikationen i en webbläsare.
 
 ===Användare
-===Admin
+====Admin
 *Username:* admin
 
 *Password:* test
 
-===Test
+====Test
 *E-mail:* test@test.com
 
 *Password:* test
