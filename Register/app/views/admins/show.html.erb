@@ -24,9 +24,27 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="col-md-6 col-md-offset-3 text-center">
+<div>
   <h2>Users and keys</h2>
 
-  <p><%=  %></p>
-
+  <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>E-mail</th>
+            <th>Key</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= user.email %></td>
+              <td><%= user.api_key.value %></td>
+              <td><%= link_to 'Delete', delete_path, class: "btn btn-danger" %></td>
+            </tr>
+        <% end %>
+    </tbody>
+  </table>
 </div>
